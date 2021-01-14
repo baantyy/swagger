@@ -30,11 +30,11 @@
     <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
     <script>
       const urlParams = new URLSearchParams(window.location.search);
-      const url = urlParams.get('url') || "localhost:3005";
+      const url = urlParams.get('api') || "localhost:3005";
       window.onload = function() {
         // Begin Swagger UI call region
         const ui = SwaggerUIBundle({
-          url: 'http://' + url + '/api/swagger',
+          url: `http://${url}/api/swagger`,
           dom_id: '#swagger-ui',
           deepLinking: true,
           presets: [
