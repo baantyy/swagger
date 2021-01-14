@@ -30,11 +30,12 @@
     <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
     <script>
       const urlParams = new URLSearchParams(window.location.search);
-      const url = urlParams.get('api') || "http://localhost:3005";
+      const index = Number(urlParams.get('a') || 0);
+      const array = ["http://localhost:3005", "https://nit-mentor.herokuapp.com"]
       window.onload = function() {
         // Begin Swagger UI call region
         const ui = SwaggerUIBundle({
-          url: `${url}/api/swagger`,
+          url: `${array[index]}/api/swagger`,
           dom_id: '#swagger-ui',
           deepLinking: true,
           presets: [
